@@ -13,8 +13,13 @@ jobs:
           distribution: liberica
           java-version: 21
           cache: maven
-      - run: mvn -B -e -ntp -Pdeploy -s settings.xml deploy
+          server-id: central
+          server-username: CENTRAL_USERNAME
+          server-password: CENTRAL_PASSWORD
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+      - run: mvn -B -e -ntp -Pdeploy deploy
         env:
           CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
-          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD  }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+          GPG_PASSPHRASE: ${{ GPG_PASSPHRASE }}
 
