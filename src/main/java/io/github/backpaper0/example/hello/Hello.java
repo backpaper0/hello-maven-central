@@ -10,7 +10,15 @@ public class Hello {
      * @return message
      */
     public String greeting() {
-        return "Hello, world!";
+        return greeting("world");
+    }
+    /**
+     * Say hello.
+     * @param name Your name
+     * @return message
+     */
+    public String greeting(String name) {
+        return "Hello, " + name + "!";
     }
 }
 
