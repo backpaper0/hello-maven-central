@@ -6,6 +6,23 @@ package io.github.backpaper0.example.hello;
  */
 public class Hello {
     /**
+     * Greeting phrase template
+     */
+    private final String template;
+    /**
+     * Instantiate.
+     */
+    public Hello() {
+        this("Hello, %s!");
+    }
+    /**
+     * Instantiate.
+     * @param template Greeting phrase template
+     */
+    public Hello(String template) {
+        this.template = template;
+    }
+    /**
      * Say hello.
      * @return message
      */
@@ -18,7 +35,7 @@ public class Hello {
      * @return message
      */
     public String greeting(String name) {
-        return "Hello, " + name + "!";
+        return template.formatted(name);
     }
 }
 

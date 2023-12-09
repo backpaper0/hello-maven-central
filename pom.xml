@@ -4,7 +4,7 @@
 
 	<groupId>io.github.backpaper0.hello</groupId>
 	<artifactId>hello-maven-central</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 
 	<name>hello-maven-central</name>
 	<description>Hello, Maven Central Repository.</description>
@@ -41,6 +41,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
+				<version>3.3.0</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -53,6 +54,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.6.3</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -74,13 +76,6 @@
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
 						<version>3.1.0</version>
-						<configuration>
-							<!-- Prevent gpg from using pinentry programs -->
-							<gpgArguments>
-								<arg>--pinentry-mode</arg>
-								<arg>loopback</arg>
-							</gpgArguments>
-						</configuration>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
